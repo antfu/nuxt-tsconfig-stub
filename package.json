@@ -1,0 +1,42 @@
+{
+  "name": "nuxt-tsconfig-stub",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.0.1",
+  "description": "Stub Nuxt's generated tsconfig.json at installation",
+  "keywords": [
+    "nuxt"
+  ],
+  "homepage": "https://github.com/antfu/nuxt-tsconfig-stub#readme",
+  "bugs": {
+    "url": "https://github.com/antfu/nuxt-tsconfig-stub/issues"
+  },
+  "license": "MIT",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antfu/nuxt-tsconfig-stub.git"
+  },
+  "funding": "https://github.com/sponsors/antfu",
+  "files": [
+    "postinstall.*"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "postinstall": "node postinstall.mjs",
+    "lint": "eslint .",
+    "release": "bumpp --commit --push --tag && npm publish"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.11"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.23.0",
+    "@antfu/ni": "^0.16.2",
+    "@types/node": "^17.0.32",
+    "bumpp": "^7.1.1",
+    "eslint": "^8.15.0",
+    "pnpm": "^7.0.1",
+    "typescript": "^4.6.4"
+  }
+}
