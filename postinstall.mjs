@@ -2,6 +2,7 @@ import { dirname, join } from 'path'
 import fs from 'fs'
 import fg from 'fast-glob'
 
+const cwd = process.cwd()
 const files = fg.sync('**/tsconfig.json', {
   ignore: [
     '**/node_modules/**',
@@ -12,6 +13,8 @@ const files = fg.sync('**/tsconfig.json', {
     '**/temp/**',
   ],
   onlyFiles: true,
+  absolute: true,
+  cwd,
 })
 
 for (const file of files) {
@@ -24,5 +27,7 @@ for (const file of files) {
     if (!fs.existsSync(dir))
       fs.mkdirSync(dir, { recursive: true })
     fs.writeFileSync(stubPath, '{}')
+    // eslint-disable-next-line no-console
+    console.log('stub', stubPath)
   }
 }
