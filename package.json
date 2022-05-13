@@ -1,7 +1,7 @@
 {
   "name": "nuxt-tsconfig-stub",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@7.0.1",
   "description": "Stub Nuxt's generated tsconfig.json at installation",
   "keywords": [
