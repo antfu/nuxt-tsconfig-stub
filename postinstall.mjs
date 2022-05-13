@@ -1,8 +1,9 @@
-import { dirname, join } from 'path'
+import { dirname, join, resolve } from 'path'
 import fs from 'fs'
+import { pathToFileURL } from 'url'
 import fg from 'fast-glob'
 
-const cwd = process.cwd()
+const cwd = process.env.INIT_CWD || resolve('../../../', pathToFileURL(import.meta.url))
 const files = fg.sync('**/tsconfig.json', {
   ignore: [
     '**/node_modules/**',
